@@ -3,10 +3,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Search from './components/Search';
 import Library from './components/Library';
+import Customers from './components/Customers';
 
 const Index = () => <h2>Home</h2>;
-// const Library = () => <h2>Library</h2>;
-const Customers = () => <h2>Customers</h2>;
 
 class App extends Component {
   constructor(props) {

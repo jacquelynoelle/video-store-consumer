@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SearchBar from './SearchBar';
+import MovieLibrary from './MovieLibrary';
 import axios from 'axios';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -49,13 +50,15 @@ class Search extends Component {
 
   render () {
     return (
-      <SearchBar onSearchChangeCallback={this.onSearchChange} />
+      <div>
+        <SearchBar onSearchChangeCallback={this.onSearchChange} />
+        <MovieLibrary movies={this.state.movieList} />
+      </div>
     )
   }
 }
 
 Search.propTypes = {
-  onSearchChangeCallback: PropTypes.func.isRequired,
 };
 
 export default Search;

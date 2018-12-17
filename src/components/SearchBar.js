@@ -19,7 +19,7 @@ class SearchBar extends Component {
       searchValue: event.target.value,
     });
 
-    this.props.onSearchChange(event.target.value);
+    this.props.onSearchChangeCallback(event.target.value);
   }
 
   render() {
@@ -38,7 +38,7 @@ class SearchBar extends Component {
 }
 
 SearchBar.propTypes = {
-  onSearchChange: PropTypes.func,
+  onSearchChangeCallback: PropTypes.func,
 };
 
 export default SearchBar;

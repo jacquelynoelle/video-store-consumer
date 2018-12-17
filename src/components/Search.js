@@ -6,7 +6,7 @@ import axios from 'axios';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-const URL = "https://localhost:3000";
+const URL = "http://localhost:3000";
 
 class Search extends Component {
   constructor(props) {

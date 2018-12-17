@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SearchBar from './SearchBar';
-import MovieLibrary from './MovieLibrary';
+import MovieList from './MovieList';
 import axios from 'axios';
 
 const URL = "http://localhost:3000";
@@ -52,7 +52,7 @@ class Search extends Component {
     return (
       <div>
         <SearchBar onSearchChangeCallback={this.onSearchChange} />
-        <MovieLibrary movies={this.state.movieList} />
+        <MovieList movies={this.state.movieList} />
       </div>
     )
   }

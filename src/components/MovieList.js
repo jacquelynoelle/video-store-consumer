@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-const MovieLibrary = (props) => {
+const MovieList = (props) => {
   const movieList = props.movies.map((movie, i) => {
     return <h2 key={i}>{movie.title}</h2>
   });
@@ -16,8 +16,8 @@ const MovieLibrary = (props) => {
   )
 }
 
-MovieLibrary.propTypes = {
+MovieList.propTypes = {
   movies: PropTypes.array.isRequired,
 };
 
-export default MovieLibrary;
+export default MovieList;

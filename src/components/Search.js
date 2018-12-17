@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import SearchBar from './SearchBar';
+import axios from 'axios';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URL = "https://localhost:3000";
 
@@ -12,11 +13,12 @@ class Search extends Component {
 
     this.state = {
       movieList: [],
+      movieMasterList: [],
     };
   }
 
   componentDidMount() {
-    axios.get(URL)
+    axios.get(URL + "/movies")
       .then((response) => {
         const movies = response.data.map((movie) => {
           return { ...movie }
@@ -36,7 +38,7 @@ class Search extends Component {
   onSearchChange = (value) => {
     console.log(value);
     const regex = new RegExp(`${value}`);
-    const movieList = this.state.masterList.filter((movie) => {
+    const movieList = this.state.movieMasterList.filter((movie) => {
       return regex.test(`${movie.title}`.toUpperCase());
     });
 
@@ -45,9 +47,11 @@ class Search extends Component {
     });
   }
 
-  return (
-    <SearchBar onSearchChangeCallback={this.onSearchChange} />
-  )
+  render () {
+    return (
+      <SearchBar onSearchChangeCallback={this.onSearchChange} />
+    )
+  }
 }
 
 Search.propTypes = {

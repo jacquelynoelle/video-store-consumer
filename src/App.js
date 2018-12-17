@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Search from './Search';
-
-
+import Search from './components/Search';
 
 const Index = () => <h2>Home</h2>;
 // const Search = () => <SearchBar onSearchChangeCallback=onSearchChange/>;

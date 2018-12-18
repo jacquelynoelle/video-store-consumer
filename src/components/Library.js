@@ -38,6 +38,7 @@ class Library extends Component {
     render () {
       return (
         <div>
+          <h2>Movies for Rent</h2>
           <MovieList movies={this.state.libraryList} />
         </div>
       )

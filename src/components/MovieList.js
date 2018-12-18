@@ -10,9 +10,9 @@ const MovieList = (props) => {
   });
 
   return (
-    <div>
+    <section className="card-columns">
       { movieList }
-    </div>
+    </section>
   )
 }
 

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MovieList = (props) => {
   const movieList = props.movies.map((movie, i) => {
-    return <Movie key={i} onSelectMovieCallback={props.onSelectMovieCallback} { ...movie } />
+    return <Movie key={i} onSelectMovieCallback={props.onSelectMovieCallback} movie={movie} { ...movie } />
   });
 
   return (

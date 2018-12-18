@@ -5,7 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './Movie.css';
 
 const Movie = (props) => {
-  const { id, title, overview, release_date, inventory, image_url } = props;
+  const { title, overview, release_date, image_url, movie } = props;
+  console.log(movie);
   return (
     <section className="card bg-dark text-white">
       <img src={ image_url } alt={ title } className="card-img card-img-transparent" />
@@ -15,18 +16,19 @@ const Movie = (props) => {
         <p className="card-text">
           { overview.length > 128 ? `${overview.substring(0, 128)}...` : overview}
         </p>
-        <button className="btn btn-primary" onClick={() => {props.onSelectMovieCallback(id, title)}}>Add</button>
+        <button className="btn btn-primary" onClick={() => {props.onSelectMovieCallback(movie)}}>
+          Add
+        </button>
       </section>
     </section>
   );
 };
 
 Movie.propTypes = {
-  id: PropTypes.number.isRequired,
-  title: PropTypes.string,
+  movie: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
   overview: PropTypes.string,
   release_date: PropTypes.string,
-  inventory: PropTypes.string,
   image_url: PropTypes.string,
   onSelectMovieCallback: PropTypes.func.isRequired,
 }

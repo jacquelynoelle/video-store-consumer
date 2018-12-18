@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import MovieList from './MovieList'
 import axios from 'axios';
 
-const URL = "http://localhost:3000";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import 'bootstrap/dist/css/bootstrap.min.css';
+const URL = "http://localhost:3000";
 
 class Library extends Component {
 

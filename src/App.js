@@ -30,18 +30,42 @@ class App extends Component {
     });
   }
 
-  onSelectMovie = (movieID, movieTitle) => {
+  onSelectMovie = (movie) => {
     this.setState({
-      currentMovie: movieID,
-      currentMovieTitle: movieTitle,
+      currentMovie: movie,
+      currentMovieTitle: movie.title,
     });
   }
 
+  onAddToLibrary = (movie) => {
+    console.log(`Add movie ${movie.title}`);
+
+    // axios.post(postURL, {
+    //       customer_id: this.state.currentCustomer,
+    //       due_date: date
+    //     }
+    //   )
+    //   .then((response) => {
+    //     console.log('API RESPONSE SUCCESS')
+    //     console.log(response.data)
+    //     this.setState({
+    //       currentCustomer: null,
+    //       currentCustomerName: "None",
+    //       currentMovie: null,
+    //       currentMovieTitle: "None",
+    //     });
+    //
+    //   })
+    //   .catch((error) => {
+    //     console.log(error)
+    //     console.log(error.message)
+    //   });
+  }
 
   onCheckout = () => {
     const postURL = `${URL}/rentals/${this.state.currentMovieTitle}/check-out`
     const date = moment()
-              .add(7,'days') //Checkout period is set to 7
+              .add(7, 'days') // Checkout period is set to 7 days
               .toDate();
 
     axios.post(postURL, {
@@ -49,11 +73,8 @@ class App extends Component {
           due_date: date
         }
       )
-
       .then((response) => {
-        // What should we do when we know the post request worked?
         console.log('API RESPONSE SUCCESS')
-        console.log(response.data)
         this.setState({
           currentCustomer: null,
           currentCustomerName: "None",
@@ -65,15 +86,11 @@ class App extends Component {
       .catch((error) => {
         console.log(error)
         console.log(error.message)
-        // What should we do when we know the post request failed?
-        // this.setState({
-        //   errorMessage: `Failure ${error.message}`,
-        // });
       });
-
   }
 
   render() {
+    const SearchComponent = () => <Search onSelectMovieCallback={this.onAddToLibrary} />
     const LibraryComponent = () => <Library onSelectMovieCallback={this.onSelectMovie} />
     const CustomersComponent = () => <Customers onSelectCustomerCallback={this.onSelectCustomer} />
 
@@ -107,7 +124,7 @@ class App extends Component {
           </nav>
 
           <Route path="/" exact component={Index} />
-          <Route path="/search/" component={Search}  />
+          <Route path="/search/" component={SearchComponent}  />
           <Route path="/library/" component={LibraryComponent} />
           <Route path="/customers/" component={CustomersComponent} />
         </div>

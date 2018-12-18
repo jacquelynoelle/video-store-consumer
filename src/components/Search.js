@@ -59,13 +59,14 @@ class Search extends Component {
           { this.state.movieList.length > 0 && `Showing ${this.state.movieList.length} results` }
         </span>
         <hr />
-        <MovieList movies={this.state.movieList} />
+        <MovieList movies={this.state.movieList} onSelectMovieCallback={this.props.onSelectMovieCallback} />
       </div>
     )
   }
 }
 
 Search.propTypes = {
+  onSelectMovieCallback: PropTypes.func.isRequired,
 };
 
 export default Search;

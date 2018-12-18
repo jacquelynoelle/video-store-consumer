@@ -39,13 +39,14 @@ class Library extends Component {
       return (
         <div>
           <h2>Movies for Rent</h2>
-          <MovieList movies={this.state.libraryList} />
+          <MovieList movies={this.state.libraryList} onSelectMovieCallback={this.props.onSelectMovieCallback} />
         </div>
       )
     }
 }
 
 Library.propTypes = {
+  onSelectMovieCallback: PropTypes.func.isRequired,
 };
 
 export default Library;

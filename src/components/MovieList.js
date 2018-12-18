@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const MovieList = (props) => {
   const movieList = props.movies.map((movie, i) => {
-    return <Movie key={i} { ...movie } />
+    return <Movie key={i} onSelectMovieCallback={props.onSelectMovieCallback} { ...movie } />
   });
 
   return (
@@ -18,6 +18,7 @@ const MovieList = (props) => {
 
 MovieList.propTypes = {
   movies: PropTypes.array.isRequired,
+  onSelectMovieCallback: PropTypes.func.isRequired,
 };
 
 export default MovieList;

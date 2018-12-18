@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CustomerList from './CustomerList'
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URL = "http://localhost:3000";
-
-// import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Customers extends Component {
 
@@ -38,13 +37,14 @@ class Customers extends Component {
     render () {
       return (
         <div>
-          <CustomerList customers={this.state.customerList} />
+          <CustomerList customers={this.state.customerList} onSelectCustomerCallback={this.props.onSelectCustomerCallback} />
         </div>
       )
     }
 }
 
 Customers.propTypes = {
+  onSelectCustomerCallback: PropTypes.func.isRequired
 };
 
 export default Customers;

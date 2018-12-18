@@ -12,12 +12,31 @@ class App extends Component {
     super(props);
 
     this.state = {
-      // currentCustomer
-      // currentMovie
+      currentCustomer: null,
+      currentCustomerName: "None",
+      currentMovie: null,
+      currentMovieTitle: "None",
     };
   }
 
+  onSelectCustomer = (customerID, customerName) => {
+    this.setState({
+      currentCustomer: customerID,
+      currentCustomerName: customerName,
+    });
+  }
+
+  onSelectMovie = (movieID, movieTitle) => {
+    this.setState({
+      currentMovie: movieID,
+      currentMovieTitle: movieTitle,
+    });
+  }
+
   render() {
+    const LibraryComponent = () => <Library onSelectMovieCallback={this.onSelectMovie} />
+    const CustomersComponent = () => <Customers onSelectCustomerCallback={this.onSelectCustomer} />
+
     return (
       <Router>
         <div>
@@ -35,13 +54,19 @@ class App extends Component {
               <li>
                 <Link to="/customers/">Customers</Link>
               </li>
+              <li>
+                Selected customer: {this.state.currentCustomerName}
+              </li>
+              <li>
+                Selected movie: {this.state.currentMovieTitle}
+              </li>
             </ul>
           </nav>
 
           <Route path="/" exact component={Index} />
-          <Route path="/search/" component={Search} />
-          <Route path="/library/" component={Library} />
-          <Route path="/customers/" component={Customers} />
+          <Route path="/search/" component={Search}  />
+          <Route path="/library/" component={LibraryComponent} />
+          <Route path="/customers/" component={CustomersComponent} />
         </div>
       </Router>
     );

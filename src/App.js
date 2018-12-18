@@ -40,26 +40,15 @@ class App extends Component {
   onAddToLibrary = (movie) => {
     console.log(`Add movie ${movie.title}`);
 
-    // axios.post(postURL, {
-    //       customer_id: this.state.currentCustomer,
-    //       due_date: date
-    //     }
-    //   )
-    //   .then((response) => {
-    //     console.log('API RESPONSE SUCCESS')
-    //     console.log(response.data)
-    //     this.setState({
-    //       currentCustomer: null,
-    //       currentCustomerName: "None",
-    //       currentMovie: null,
-    //       currentMovieTitle: "None",
-    //     });
-    //
-    //   })
-    //   .catch((error) => {
-    //     console.log(error)
-    //     console.log(error.message)
-    //   });
+    axios.post(URL + '/movies', { ...movie })
+      .then((response) => {
+        console.log('API RESPONSE SUCCESS')
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.log(error)
+        console.log(error.message)
+      });
   }
 
   onCheckout = () => {

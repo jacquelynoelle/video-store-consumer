@@ -19,10 +19,6 @@ class Search extends Component {
     };
   }
 
-  componentDidMount() {
-    this.getAPImovies('');
-  }
-
   getAPImovies = (value) => {
     axios.get(URL + "/movies", {
         params: {

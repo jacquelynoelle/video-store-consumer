@@ -20,6 +20,7 @@ class App extends Component {
       currentCustomerName: "None",
       currentMovie: null,
       currentMovieTitle: "None",
+      alerts: "",
     };
   }
 
@@ -44,10 +45,15 @@ class App extends Component {
       .then((response) => {
         console.log('API RESPONSE SUCCESS')
         console.log(response.data)
+        this.setState({
+          alerts: `Added movie ${movie.title}`
+        })
       })
       .catch((error) => {
-        console.log(error)
-        console.log(error.message)
+        const errors = Object.values(error.response.data.errors)[0][0]
+        this.setState({
+          alerts: `Could not add movie ${movie.title} to the library: ${errors}`
+        })
       });
   }
 
@@ -65,6 +71,7 @@ class App extends Component {
       .then((response) => {
         console.log('API RESPONSE SUCCESS')
         this.setState({
+          alerts: `Successfully checked out ${this.state.currentMovieTitle} to ${this.state.currentCustomerName}`,
           currentCustomer: null,
           currentCustomerName: "None",
           currentMovie: null,
@@ -73,8 +80,10 @@ class App extends Component {
 
       })
       .catch((error) => {
-        console.log(error)
-        console.log(error.message)
+        const errors = Object.values(error.response.data.errors)[0][0]
+        this.setState({
+          alerts: `Could not checkout the movie: ${errors}`
+        })
       });
   }
 
@@ -111,7 +120,7 @@ class App extends Component {
               </button>
             </ul>
           </nav>
-
+          { this.state.alerts !=="" && <div className="alert alert-info" role="alert">{this.state.alerts}</div>}
           <Route path="/" exact component={Index} />
           <Route path="/search/" component={SearchComponent}  />
           <Route path="/library/" component={LibraryComponent} />

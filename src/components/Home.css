@@ -1,0 +1,27 @@
+.bobbing-image-fast {
+    -webkit-animation: mover-low 0.5s infinite alternate;
+    animation: mover-low 0.5s infinite alternate;
+}
+
+.bobbing-image-slow {
+    -webkit-animation: mover-high 1s infinite alternate;
+    animation: mover-high 1s infinite alternate;
+}
+
+@-webkit-keyframes mover-low {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+@keyframes mover-low {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-15px); }
+}
+
+@-webkit-keyframes mover-high {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}
+@keyframes mover-high {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-30px); }
+}

@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Home from './components/Home';
 import Search from './components/Search';
 import Library from './components/Library';
 import Customers from './components/Customers';
 import axios from 'axios';
 import moment from 'moment';
 
-const Index = () => <h2>Home</h2>;
 const URL = "http://localhost:3000";
 
 class App extends Component {
@@ -88,6 +88,7 @@ class App extends Component {
   }
 
   render() {
+    const Index = () => <Home />
     const SearchComponent = () => <Search onSelectMovieCallback={this.onAddToLibrary} />
     const LibraryComponent = () => <Library onSelectMovieCallback={this.onSelectMovie} />
     const CustomersComponent = () => <Customers onSelectCustomerCallback={this.onSelectCustomer} />

@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CustomerList = (props) => {
   const customerList = props.customers.map((customer, i) => {
-    return <Customer key={i} onSelectCustomerCallback={props.onSelectCustomerCallback} {...customer} />
+    return <Customer key={i} onSelectCustomerCallback={props.onSelectCustomerCallback} customer={customer} />
   });
 
   return (

@@ -1,32 +1,61 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import './Customer.css';
 
-const Customer = (props) => {
-  const { id, name, city, state } = props;
-  return (
-    <section>
+class Customer extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      showDetail: false,
+    };
+  }
+
+  toggleCustomerDetail = () => {
+    this.setState({
+      showDetail: !this.state.showDetail,
+    });
+  }
+
+  render () {
+    const { customer } = this.props;
+    const { id, name, city, state, } = this.props.customer;
+
+    return (
       <section>
-        <h3>{ name }</h3>
-        <p>{ `${city}, ${state}` }</p>
-        <button className="btn btn-primary" onClick={() => {props.onSelectCustomerCallback(id, name)}}>Add</button>
+        <section>
+          <h3>{ name }</h3>
+          { this.state.showDetail &&
+            <section>
+              <p>{ `${city}, ${state}` }</p>
+              <p>{ `Movies checked out: ${customer.movies_checked_out_count}` }</p>
+              <ul>{ customer.movies_checked_out.map((movie, i) => {
+                  return <li key={i}>{movie.title}</li>
+                }) }</ul>
+            </section>
+          }
+          <button className="btn btn-primary" onClick={() => {this.props.onSelectCustomerCallback(id, name)}}>
+            Add
+          </button>
+          <button className="btn btn-warning" onClick={() => {this.toggleCustomerDetail()}}>
+            { this.state.showDetail ? 'Collapse' : 'Expand' }
+          </button>
+        </section>
       </section>
-    </section>
-  );
-};
+    );
+  }
+}
 
 Customer.propTypes = {
-  id: PropTypes.number.isRequired,
-  registered_at: PropTypes.string,
+  customer: PropTypes.object.isRequired,
+  id: PropTypes.number,
   name: PropTypes.string,
-  address: PropTypes.string,
   city: PropTypes.string,
   state: PropTypes.string,
-  postal_code: PropTypes.string,
-  phone: PropTypes.string,
-  account_credit: PropTypes.number,
+  movies_checked_out_count: PropTypes.func,
+  movies_checked_out: PropTypes.func,
   onSelectCustomerCallback: PropTypes.func.isRequired,
 }
 

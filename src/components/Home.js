@@ -12,12 +12,12 @@ import voldemort from '../images/voldemort.png';
 const Home = (props) => {
   return (
     <div className="logo">
-      <img src={harry} className={`bobbing-image-slow ${props.class}`} />
-      <img src={hermione} className={`bobbing-image-fast ${props.class}`} />
-      <img src={ron} className={`bobbing-image-slow ${props.class}`} />
-      <img src={dumbledore} className={`bobbing-image-fast ${props.class}`} />
-      <img src={snape} className={`bobbing-image-slow ${props.class}`} />
-      <img src={voldemort} className={`bobbing-image-fast ${props.class}`} />
+      <img src={harry} alt="harry" className={`bobbing-image-slow ${props.class}`} />
+      <img src={hermione} alt="hermione" className={`bobbing-image-fast ${props.class}`} />
+      <img src={ron} alt="ron" className={`bobbing-image-slow ${props.class}`} />
+      <img src={dumbledore} alt="dumbledore" className={`bobbing-image-fast ${props.class}`} />
+      <img src={snape} alt="snape" className={`bobbing-image-slow ${props.class}`} />
+      <img src={voldemort} alt="voldemort" className={`bobbing-image-fast ${props.class}`} />
     </div>
   );
 };

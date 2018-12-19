@@ -31,8 +31,10 @@ class Customer extends Component {
             <section>
               <p>{ `${city}, ${state}` }</p>
               <p>{ `Movies checked out: ${customer.movies_checked_out_count}` }</p>
-              <ul>{ customer.movies_checked_out.map((movie, i) => {
-                  return <li key={i}>{movie.title}</li>
+              <ul>{ customer.movies_checked_out.map((rental, i) => {
+                  return (<li key={i} className={rental.overdue ? "highlight" : ""}>
+                    {`${rental.title}: Due ${rental.due_date}`}
+                  </li>)
                 }) }</ul>
             </section>
           }

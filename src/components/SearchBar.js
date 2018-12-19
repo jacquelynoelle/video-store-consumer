@@ -24,12 +24,12 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <section>
+      <section className="SearchBar">
         <input
           onChange={this.onSearchChange}
           value={this.state.searchValue}
           name="search-bar"
-          className="search-bar"
+          className="search-bar cu-search-input"
           placeholder="Search Movies"
         />
       </section>

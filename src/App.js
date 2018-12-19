@@ -50,6 +50,7 @@ class App extends Component {
         })
       })
       .catch((error) => {
+        console.log(error.response.data.errors);
         const errors = Object.values(error.response.data.errors)[0][0]
         this.setState({
           alerts: `Could not add movie ${movie.title} to the library: ${errors}`
@@ -80,6 +81,7 @@ class App extends Component {
 
       })
       .catch((error) => {
+        console.log(error.response.data.errors);
         const errors = Object.values(error.response.data.errors)[0][0]
         this.setState({
           alerts: `Could not checkout the movie: ${errors}`
@@ -96,31 +98,28 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav>
-            <Home class="logo-image" />
-            <ul>
-              <li>
-                <Link to="/">Home</Link>
+          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+            <Home class="navbar-brand logo-image" />
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item active">
+                <Link to="/" className="nav-link">Home</Link>
               </li>
-              <li>
-                <Link to="/search/">Search</Link>
+              <li className="nav-item">
+                <Link to="/search/" className="nav-link">Search</Link>
               </li>
-              <li>
-                <Link to="/library/">Library</Link>
+              <li className="nav-item">
+                <Link to="/library/" className="nav-link">Library</Link>
               </li>
-              <li>
-                <Link to="/customers/">Customers</Link>
+              <li className="nav-item">
+                <Link to="/customers/" className="nav-link">Customers</Link>
               </li>
-              <li>
-                Selected customer: {this.state.currentCustomerName}
-              </li>
-              <li>
-                Selected movie: {this.state.currentMovieTitle}
-              </li>
-              <button
-                onClick={() => {this.onCheckout()}}> Checkout
-              </button>
             </ul>
+            </div>
           </nav>
           { this.state.alerts !=="" && <div className="alert alert-info" role="alert">{this.state.alerts}</div>}
           <Route path="/" exact component={Index} />

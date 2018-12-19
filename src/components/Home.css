@@ -1,3 +1,11 @@
+.logo-image {
+  height: 80px;
+}
+
+.logo {
+  padding-top: 30px;
+}
+
 .bobbing-image-fast {
     -webkit-animation: mover-low 0.5s infinite alternate;
     animation: mover-low 0.5s infinite alternate;

@@ -97,6 +97,7 @@ class App extends Component {
       <Router>
         <div>
           <nav>
+            <Home class="logo-image" />
             <ul>
               <li>
                 <Link to="/">Home</Link>

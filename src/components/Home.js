@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css'
+import PropTypes from 'prop-types';
 
 import harry from '../images/harry.png';
 import hermione from '../images/hermione.png';
@@ -10,15 +11,19 @@ import voldemort from '../images/voldemort.png';
 
 const Home = (props) => {
   return (
-    <div>
-      <img src={harry} className="bobbing-image-slow" />
-      <img src={hermione} className="bobbing-image-fast" />
-      <img src={ron} className="bobbing-image-slow" />
-      <img src={dumbledore} className="bobbing-image-fast" />
-      <img src={snape} className="bobbing-image-slow" />
-      <img src={voldemort} className="bobbing-image-fast" />
+    <div className="logo">
+      <img src={harry} className={`bobbing-image-slow ${props.class}`} />
+      <img src={hermione} className={`bobbing-image-fast ${props.class}`} />
+      <img src={ron} className={`bobbing-image-slow ${props.class}`} />
+      <img src={dumbledore} className={`bobbing-image-fast ${props.class}`} />
+      <img src={snape} className={`bobbing-image-slow ${props.class}`} />
+      <img src={voldemort} className={`bobbing-image-fast ${props.class}`} />
     </div>
   );
 };
+
+Home.propTypes = {
+  class: PropTypes.string
+}
 
 export default Home;

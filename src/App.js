@@ -15,6 +15,14 @@ class App extends Component {
     };
   }
 
+  $(document).ready(function () {
+
+      $('#sidebarCollapse').on('click', function () {
+          $('#sidebar').toggleClass('active');
+      });
+
+  });
+
   render() {
     return (
 

@@ -17,9 +17,9 @@ class App extends Component {
 
     this.state = {
       currentCustomer: null,
-      currentCustomerName: "None",
+      currentCustomerName: null,
       currentMovie: null,
-      currentMovieTitle: "None",
+      currentMovieTitle: null,
       alerts: "",
     };
   }
@@ -111,15 +111,6 @@ class App extends Component {
               <li>
                 <Link to="/customers/">Customers</Link>
               </li>
-              <li>
-                Selected customer: {this.state.currentCustomerName}
-              </li>
-              <li>
-                Selected movie: {this.state.currentMovieTitle}
-              </li>
-              <button
-                onClick={() => {this.onCheckout()}}> Checkout
-              </button>
             </ul>
           </nav>
           { this.state.alerts !=="" && <div className="alert alert-info" role="alert">{this.state.alerts}</div>}
@@ -127,6 +118,37 @@ class App extends Component {
           <Route path="/search/" component={SearchComponent}  />
           <Route path="/library/" component={LibraryComponent} />
           <Route path="/customers/" component={CustomersComponent} />
+
+          { (this.state.currentMovie || this.state.currentCustomer) &&
+            <aside className="checkout-module">
+              <h6 className="checkout-module__header">Current Selections</h6>
+              <div className="row">
+                <div className="col-4 checkout-module__movie">
+                  { this.state.currentMovie ?
+                    <img
+                      src={this.state.currentMovie.image_url}
+                      alt={this.state.currentMovieTitle}
+                      className="checkout-module__image"
+                    /> :
+                    <div className="checkout-module__image--placeholder">
+                       <Link to="/library/">Select Movie</Link>
+                    </div>
+                  }
+                </div>
+                <div className="col-8">
+                  Customer:<br />
+                  { this.state.currentCustomerName ?
+                    <strong>{this.state.currentCustomerName.toUpperCase()}</strong> :
+                    <Link to="/customers/">Select Customer</Link>
+                  }
+                  <hr/>
+                  <button className="btn btn-info" onClick={() => {this.onCheckout()}}>
+                    Checkout
+                  </button>
+                </div>
+              </div>
+            </aside>
+          }
         </div>
       </Router>
     );

@@ -38,7 +38,7 @@ class Customer extends Component {
                 }) }</ul>
             </section>
           }
-          <button className="btn btn-primary" onClick={() => {this.props.onSelectCustomerCallback(id, name)}}>
+          <button className="btn btn-info" onClick={() => {this.props.onSelectCustomerCallback(id, name)}}>
             Add
           </button>
           <button className="btn btn-warning" onClick={() => {this.toggleCustomerDetail()}}>

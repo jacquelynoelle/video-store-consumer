@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Search from './components/Search';
 import Library from './components/Library';
 import Customers from './components/Customers';
+import PuppetPals from './components/PuppetPals';
 import axios from 'axios';
 import moment from 'moment';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -100,7 +101,7 @@ class App extends Component {
       <Router>
         <div>
           <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <Home class="navbar-brand logo-image" />
+            <PuppetPals class="navbar-brand logo-image" />
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
               aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>

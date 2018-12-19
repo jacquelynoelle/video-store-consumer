@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import './Customer.css';
+import './Customer.css';
 
 class Customer extends Component {
   constructor(props) {

@@ -16,7 +16,7 @@ const Movie = (props) => {
         <p className="card-text">
           { overview.length > 128 ? `${overview.substring(0, 128)}...` : overview}
         </p>
-        <button className="btn btn-primary" onClick={() => {props.onSelectMovieCallback(movie)}}>
+        <button className="btn btn-info" onClick={() => {props.onSelectMovieCallback(movie)}}>
           Add
         </button>
       </section>

@@ -49,7 +49,6 @@ class Search extends Component {
   render () {
     return (
       <div>
-        <h2>Movie Search</h2>
         <SearchBar onSearchChangeCallback={this.onSearchChange} />
         <span className="search-results">
           { this.state.movieList.length > 0 && `Showing ${this.state.movieList.length} results` }

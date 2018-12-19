@@ -1,0 +1,12 @@
+:root {
+  --magenta: #880E4F;
+  --navy: #01579B;
+}
+
+.carousel-item {
+  background: linear-gradient(to right, var(--navy) 0%, var(--magenta) 100%);
+}
+
+.carousel-item > img {
+  opacity: 0.3;
+}

@@ -7,6 +7,7 @@ import Library from './components/Library';
 import Customers from './components/Customers';
 import axios from 'axios';
 import moment from 'moment';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URL = "http://localhost:3000";
 
@@ -121,7 +122,14 @@ class App extends Component {
             </ul>
             </div>
           </nav>
-          { this.state.alerts !=="" && <div className="alert alert-info" role="alert">{this.state.alerts}</div>}
+          { this.state.alerts !== "" &&
+            <div className="alert alert-info alert-dismissible fade show" role="alert">
+              {this.state.alerts}
+              <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          }
           <Route path="/" exact component={Index} />
           <Route path="/search/" component={SearchComponent}  />
           <Route path="/library/" component={LibraryComponent} />

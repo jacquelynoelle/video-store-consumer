@@ -106,20 +106,32 @@ class App extends Component {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav">
               <li className="nav-item active">
-                <Link to="/" className="nav-link">Home</Link>
+                <Link to="/" className="nav-link Nav__label">Home</Link>
               </li>
               <li className="nav-item">
-                <Link to="/search/" className="nav-link">Search</Link>
+                <Link to="/library/" className="nav-link Nav__label">
+                  <i className="material-icons">
+                  video_library
+                  </i>
+                  <span className="align-top">Library</span>
+                </Link>
               </li>
               <li className="nav-item">
-                <Link to="/library/" className="nav-link">Library</Link>
+                <Link to="/customers/" className="nav-link Nav__label">
+                <i className="material-icons">
+                  supervised_user_circle
+                </i><span className="align-top">Customers</span></Link>
               </li>
-              <li className="nav-item">
-                <Link to="/customers/" className="nav-link">Customers</Link>
-              </li>
-            </ul>
+              </ul>
+              <ul className="navbar-nav ml-auto">
+                <li className="nav-item d-flex align-content-center active">
+                  <Link to="/search/" className="nav-link Nav__label"><i className="material-icons md-light md-24">
+                      search
+                    </i><span className="align-top">Search</span></Link>
+                </li>
+              </ul>
             </div>
           </nav>
           { this.state.alerts !== "" &&

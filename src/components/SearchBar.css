@@ -19,3 +19,10 @@
     margin-bottom: 0;
     display: flex;
 }
+
+.Container {
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: content-box;
+    width: calc(100% - 56px);
+}

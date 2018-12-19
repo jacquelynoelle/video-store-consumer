@@ -38,11 +38,11 @@ class Customer extends Component {
                 }) }</ul>
             </section>
           }
-          <button className="btn btn-info" onClick={() => {this.props.onSelectCustomerCallback(id, name)}}>
-            Add
+          <button className="btn btn-info btn-sm" onClick={() => {this.props.onSelectCustomerCallback(id, name)}}>
+            Select
           </button>
-          <button className="btn btn-warning" onClick={() => {this.toggleCustomerDetail()}}>
-            { this.state.showDetail ? 'Collapse' : 'Expand' }
+          <button className="btn btn-warning btn-sm" onClick={() => {this.toggleCustomerDetail()}}>
+            { this.state.showDetail ? 'Hide Details' : 'Show Details' }
           </button>
         </section>
       </section>

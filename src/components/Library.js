@@ -38,7 +38,9 @@ class Library extends Component {
     render () {
       return (
         <div>
+          <br />
           <h2>Movies for Rent</h2>
+          <hr />
           <MovieList movies={this.state.libraryList} onSelectMovieCallback={this.props.onSelectMovieCallback} />
         </div>
       )

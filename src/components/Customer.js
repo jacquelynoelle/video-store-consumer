@@ -25,7 +25,7 @@ class Customer extends Component {
 
     return (
       <section>
-        <section>
+        <section className="mb-3">
           <h3>{ name }</h3>
           { this.state.showDetail &&
             <section>
@@ -38,10 +38,10 @@ class Customer extends Component {
                 }) }</ul>
             </section>
           }
-          <button className="btn btn-info btn-sm" onClick={() => {this.props.onSelectCustomerCallback(id, name)}}>
+          <button className="btn btn-info btn-sm mr-1" onClick={() => {this.props.onSelectCustomerCallback(id, name)}}>
             Select
           </button>
-          <button className="btn btn-warning btn-sm" onClick={() => {this.toggleCustomerDetail()}}>
+          <button className="btn btn-outline-info btn-sm" onClick={() => {this.toggleCustomerDetail()}}>
             { this.state.showDetail ? 'Hide Details' : 'Show Details' }
           </button>
         </section>

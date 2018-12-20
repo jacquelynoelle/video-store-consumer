@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CustomerList from './CustomerList'
 import axios from 'axios';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const URL = "http://localhost:3000";
@@ -36,7 +37,10 @@ class Customers extends Component {
 
     render () {
       return (
-        <div>
+        <div className="ml-3">
+          <br />
+          <h2>All Customers</h2>
+          <hr />
           <CustomerList customers={this.state.customerList} onSelectCustomerCallback={this.props.onSelectCustomerCallback} />
         </div>
       )

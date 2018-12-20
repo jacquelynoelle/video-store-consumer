@@ -1,3 +1,29 @@
 .card-img-transparent {
   opacity: 0.3;
 }
+
+:root {
+  --magenta: #880E4F;
+  --dark-magenta: #640a3a;
+  --navy: #01579B;
+}
+
+.btn-info {
+  background-color: var(--magenta);
+  border-color: var(--magenta);
+}
+
+.btn-info:hover {
+  background-color: var(--dark-magenta);
+  border-color: var(--dark-magenta);
+}
+
+.btn-outline-info {
+  color: var(--magenta);
+  border-color: var(--magenta);
+}
+
+.btn-outline-info:hover {
+  background-color: var(--magenta);
+  border-color: var(--magenta);
+}

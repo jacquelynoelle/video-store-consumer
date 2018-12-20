@@ -81,3 +81,16 @@
     text-transform: uppercase;
     letter-spacing: .5px;
 }
+
+:root {
+  --magenta: #880E4F;
+  --navy: #01579B;
+}
+
+.btn-info {
+  background-color: var(--magenta);
+}
+
+.btn-info:hover {
+  background-color: darken(var(--magenta), 5%)
+}

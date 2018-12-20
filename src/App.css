@@ -81,3 +81,7 @@
     text-transform: uppercase;
     letter-spacing: .5px;
 }
+
+span {
+  margin-left: .5em ;
+}

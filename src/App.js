@@ -77,9 +77,9 @@ class App extends Component {
         this.setState({
           alerts: `Successfully checked out ${this.state.currentMovieTitle} to ${this.state.currentCustomerName}`,
           currentCustomer: null,
-          currentCustomerName: "None",
+          currentCustomerName: null,
           currentMovie: null,
-          currentMovieTitle: "None",
+          currentMovieTitle: null,
         });
 
       })

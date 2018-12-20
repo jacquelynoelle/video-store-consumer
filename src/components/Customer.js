@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Customer.css';
+import moment from 'moment';
 
 class Customer extends Component {
   constructor(props) {
@@ -26,25 +27,26 @@ class Customer extends Component {
     return (
       <section>
         <section className="mb-3">
-          <h3>{ name }</h3>
+          <h5>{ name }</h5>
           { this.state.showDetail &&
             <section>
-              <p>{ `${city}, ${state}` }</p>
-              <p>{ `Movies checked out: ${customer.movies_checked_out_count}` }</p>
+              { `${city}, ${state}` }<br />
+              { `Movies checked out: ${customer.movies_checked_out_count}` }
               <ul>{ customer.movies_checked_out.map((rental, i) => {
                   return (<li key={i} className={rental.overdue ? "highlight" : ""}>
-                    {`${rental.title}: Due ${rental.due_date}`}
+                    <strong>{rental.title}</strong>{`: Due ${moment(rental.due_date).format("M/D/YYYY")}`}
                   </li>)
                 }) }</ul>
             </section>
           }
-          <button className="btn btn-info btn-sm mr-1" onClick={() => {this.props.onSelectCustomerCallback(id, name)}}>
+          <button className="btn btn-info btn-sm mr-2" onClick={() => {this.props.onSelectCustomerCallback(id, name)}}>
             Select
           </button>
           <button className="btn btn-outline-info btn-sm" onClick={() => {this.toggleCustomerDetail()}}>
             { this.state.showDetail ? 'Hide Details' : 'Show Details' }
           </button>
         </section>
+        <hr />
       </section>
     );
   }

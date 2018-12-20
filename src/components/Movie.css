@@ -5,7 +5,7 @@
 :root {
   --magenta: #880E4F;
   --dark-magenta: #640a3a;
-  --navy: #01579B;
+  --info: #880E4F;
 }
 
 .btn-info {
@@ -26,4 +26,20 @@
 .btn-outline-info:hover {
   background-color: var(--magenta);
   border-color: var(--magenta);
+}
+
+.btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show > .btn-info.dropdown-toggle {
+  background-color: var(--dark-magenta);
+  border-color: var(--dark-magenta);
+  outline: none;
+  box-shadow: none;
+}
+
+a {
+  color: var(--magenta);
+}
+
+a:hover {
+  text-decoration: none;
+  color: var(--dark-magenta);
 }

@@ -100,7 +100,7 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <PuppetPals class="navbar-brand logo-image" />
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
               aria-expanded="false" aria-label="Toggle navigation">
@@ -128,7 +128,7 @@ class App extends Component {
               </ul>
               <ul className="navbar-nav ml-auto">
                 <li className="nav-item d-flex align-content-center active">
-                  <Link to="/search/" className="nav-link Nav__label"><i className="material-icons md-light md-24">
+                  <Link to="/search/" className="nav-link Nav__label"><i className="material-icons md-24">
                       search
                     </i><span className="align-top">Search</span></Link>
                 </li>

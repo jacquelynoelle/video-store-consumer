@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from './components/Home';
 import Search from './components/Search';
@@ -8,7 +7,9 @@ import Customers from './components/Customers';
 import PuppetPals from './components/PuppetPals';
 import axios from 'axios';
 import moment from 'moment';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 const URL = "http://localhost:3000";
 

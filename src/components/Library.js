@@ -37,7 +37,7 @@ class Library extends Component {
 
     render () {
       return (
-        <div>
+        <div className="ml-3 mr-3">
           <br />
           <h2>Movies for Rent</h2>
           <hr />

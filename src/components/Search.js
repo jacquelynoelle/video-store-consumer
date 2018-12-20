@@ -7,7 +7,7 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Search.css';
 
-const URL = "http://localhost:3000";
+const URL = "http://puppetpals.herokuapp.com";
 
 
 class Search extends Component {

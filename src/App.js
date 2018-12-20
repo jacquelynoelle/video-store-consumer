@@ -11,7 +11,7 @@ import moment from 'moment';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
-const URL = "http://localhost:3000";
+const URL = "http://puppetpals.herokuapp.com";
 
 class App extends Component {
 

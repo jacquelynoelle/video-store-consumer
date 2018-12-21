@@ -1,5 +1,6 @@
 {
   "name": "video-store-consumer",
+  "homepage": "http://puppetpals.surge.sh",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

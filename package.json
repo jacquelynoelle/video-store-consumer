@@ -10,14 +10,13 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "surge": "^0.20.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "deploy": "npm run build && mv build/index.html build/200.html && surge build puppetpals.surge.sh"
-  },
-  "homepage": "http://puppetpals.surge.sh/",
+    "eject": "react-scripts eject"
+  }
 }

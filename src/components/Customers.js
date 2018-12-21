@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const URL = "http://puppetpals.herokuapp.com";
+const URL = "https://puppetpals.herokuapp.com";
 
 class Customers extends Component {
 

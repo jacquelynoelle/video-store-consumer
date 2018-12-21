@@ -19,5 +19,5 @@
     "eject": "react-scripts eject",
     "deploy": "npm run build && mv build/index.html build/200.html && surge build puppetpals.surge.sh"
   },
-  "homepage": "http://puppetpals.surge.sh/",
+  "homepage": {"http://puppetpals.surge.sh/"},
 }
